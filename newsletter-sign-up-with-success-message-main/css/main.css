@@ -14,10 +14,10 @@
     --heading-size: 3.5rem;
   
     /* Colors */
-    --pale-navy: #36384d;
+    --pale-navy: hsl(235, 18%, 26%);
     --white: #fff;
     --dark-navy: #242742;
-    --grey-25: rgba(25, 24, 43, 0.25);
+    --grey-25: hsla(243, 28%, 13%, 0.25);
     --color-tomato: hsl(4, 100%, 67%);
 
     /* border-radious */
@@ -185,7 +185,32 @@
     display: inline-block;
     min-width: 4.75rem;
     z-index: 1;
+    position: relative;
+    top: 1.7rem;
   }
+
+.vivamus-vestibulum-n1,
+.vivamus-vestibulum-n2 {
+  position: relative;
+  line-height: 150%;
+  font-size: 0.8rem;
+  display: inline-block;
+  min-width: 4.75rem;
+  font-weight: 700;
+  z-index: 1;
+}
+  .vivamus-vestibulum-n2 {
+    color: var(--color-tomato);
+    text-align: right;
+    min-width: 6.75rem;
+    margin-left: 16rem;
+    visibility: hidden;
+  }
+
+  .vivamus-vestibulum-n2.error{
+    display: block;
+  }
+  
   .rectangle {
     height: 3.5rem;
     width: 23.5rem;
@@ -213,6 +238,10 @@
     padding: 0;
     z-index: 1;
   }
+
+  .your-email-address::placeholder.error{
+    color: #ff6a3a;
+  }
   .contact-block,
   .rectangle-parent {
     align-self: stretch;
@@ -230,6 +259,17 @@
     padding: var(--padding-base) var(--padding-5xl);
     z-index: 1;
   }
+
+  .rectangle-parent.error {
+    border-radius: var(--br-5xs);
+    background-color: hsl(3, 100%, 96%);
+    border: 1px solid var(--color-tomato);
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-direction: row;
+    padding: 1rem var(--padding-5xl);
+    z-index: 1;
+  }
   .contact-block {
     flex-direction: column;
     gap: 0.5rem;
@@ -244,7 +284,7 @@
     display: none;
     max-width: 100%;
   }
-  .get-started {
+  /* .get-started {
     width: 14.563rem;
     position: relative;
     font-size: var(--body-bold-size);
@@ -254,7 +294,7 @@
     color: var(--white);
     text-align: center;
     z-index: 1;
-  }
+  } */
   .rectangle-group {
     cursor: pointer;
     border: 0;
@@ -263,8 +303,12 @@
     align-self: stretch;
     border-radius: var(--br-5xs);
     overflow: hidden;
+    text-align: center;
     display: flex;
     flex-direction: row;
+    font-family: var(--body-bold);
+    font-size: var(--body-bold-size);
+    color: var(--white);
     align-items: flex-start;
     justify-content: flex-start;
     box-sizing: border-box;
@@ -352,6 +396,111 @@
     line-height: normal;
     letter-spacing: normal;
   }
+
+
+  /* success box css */
+.card {
+  width: 31.5rem;
+  height: 32.5rem;
+  position: relative;
+  border-radius: var(--br-17xl);
+  background-color: var(--white);
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.25);
+  display: none;
+  max-width: 100%;
+}
+.check-icon {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  z-index: 1;
+}
+.description,
+.title {
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+.title {
+  margin: 0;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.description {
+  font-size: var(--body-bold-size);
+  line-height: 150%;
+}
+
+.description span{
+  color:hsl(235, 18%, 26%);
+  font-weight: bold;
+}
+.title-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.rectangle {
+  height: 3.5rem;
+  width: 23.5rem;
+  position: relative;
+  border-radius: var(--br-5xs);
+  background-color: var(--dark-navy);
+  display: none;
+  max-width: 100%;
+}
+/* .get-started {
+  width: 7.938rem;
+  position: relative;
+  font-size: var(--body-bold-size);
+  line-height: 150%;
+  display: inline-block;
+  font-family: var(--body-bold);
+  color: var(--white);
+  text-align: center;
+  min-width: 7.938rem;
+  z-index: 1;
+} */
+
+.card-parent,
+.desktop-success,
+.rectangle-parent {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.card-parent {
+  width: 31.5rem;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3rem var(--padding-5xl) var(--padding-base);
+  gap: 2.5rem;
+  max-width: 100%;
+}
+.desktop-success {
+  width: 100%;
+  position: relative;
+  background-color: var(--pale-navy);
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
+  padding: 17.5rem var(--padding-xl);
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--heading-size);
+  color: var(--dark-navy);
+  font-family: var(--body-bold);
+}
+
   @media screen and (max-width: 925px) {
     .title {
       font-size: 2.813rem;
@@ -380,6 +529,57 @@
       display: flex;
       flex-direction: column-reverse;
     }
+
+    .desktop-success{
+      width: 100%;
+      position: relative;
+      background-color: var(--white);
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: flex-start;
+      /* padding: ; */
+    }
+
+    .title {
+      margin: 0;
+      font-size: inherit;
+      line-height: 100%;
+      font-weight: 700;
+      font-family: inherit;
+    }
+
+    .card-parent,
+    .success-title-parent{
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 1.5rem;
+    }
+
+    .rectangle-parent {
+      cursor: pointer;
+      border: 0;
+      padding: 1.125rem 1.25rem 0.875rem 1.375rem;
+      background-color: var(--dark-navy);
+      align-self: stretch;
+      border-radius: var(--br-5xs);
+      flex-direction: row;
+      justify-content: center;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .card-parent{
+      gap: 2.5rem;
+      text-align: left;
+      font-size: 2.5rem;
+      color: var(--dark-navy);
+      font-family: var(--body-bold);
+      width: 375px;
+      height: 812px;
+    }
   }
   @media screen and (max-width: 450px) {
     .title {
@@ -395,5 +595,9 @@
       padding-left: var(--padding-xl);
       padding-right: var(--padding-xl);
       box-sizing: border-box;
+    }
+
+    .illustration{
+      width: 100%;
     }
 }
