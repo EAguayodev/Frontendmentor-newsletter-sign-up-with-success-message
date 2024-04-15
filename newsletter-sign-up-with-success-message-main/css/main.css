@@ -6,11 +6,8 @@
 
 :root{
   /* Primary */
-
 --Tomato: hsl(4, 100%, 67%);
-
 /* Neutral */
-
 --Dark-Slate-Grey: hsl(234, 29%, 20%);
 --Charcoal-Grey: hsl(235, 18%, 26%);
 --Grey: hsl(231, 7%, 60%);
@@ -19,7 +16,7 @@
 
 
 body {
-  background: hsl(235, 18%, 26%) !important;
+  background: hsl(235, 18%, 26%);
   font-family: Roboto;
   width: 100vw;
   height: 100vh;
@@ -40,6 +37,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* visibility: hidden; */
 }
 
 .content {
@@ -51,18 +49,17 @@ body {
   margin-left: 60px;
 }
 
-.signup-header {
+.signup-title {
   color: hsl(235, 18%, 26%);
   font-size: 45px;
-  margin-top: 100px !important;
-  margin-left: 40px;
+  margin: 3rem 2rem 1rem 0;
   font-weight: 700;
 }
 
 p {
   font-size: 16px;
   color: hsl(235, 18%, 26%);
-  margin-left: 10px;
+  margin-left: -1rem;
   line-height: 24px;
 }
 
@@ -85,10 +82,10 @@ li {
 
 }
 
-/* .image {
+.image {
   margin-right: 20px;
   margin-left: 20px;
-} */
+}
 
 #signup-form {
   max-width: 400px;
@@ -99,6 +96,8 @@ li {
 
 .newsletter-label {
   display: block;
+  right: 2rem;
+  position: relative;
   margin-bottom: 5px;
   font-weight: bold;
   font-size: 14px;
@@ -106,38 +105,40 @@ li {
 
 .error-message {
   margin-top: -25px;
-  margin-right: -30px;
-  color: red;
+  margin-left: 11rem;
+  color: var(--Tomato);
   font-size: 14px;
   display: none;
 }
 
 .email-input {
-  width: 85%;
-  padding: 10px;
+  width: 100%;
+  position: relative;
+  right: 2.5rem;
+  padding: 1rem;
   margin-bottom: 20px;
   border: 1px solid hsl(231, 7%, 60%);
   border-radius: 5px;
   cursor: pointer;
 }
 
-.email-input:focus {
-  border: 1px solid hsl(231, 7%, 60%);
+.email-input:focus{
+  border: none;
 }
 
 .submit-button {
-  width: 80%;
+  width: 100%;
+  position: relative;
+  right: 2.5rem;
   background: var(--Charcoal-Grey);
   color: var(--White);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  padding: 10px 20px;
+  padding: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 400;
-
+  font-weight: 700;
 }
 
 .submit-button:hover {
@@ -173,43 +174,48 @@ li {
   height: 450px;
 }
 
+.success-message p{
+  margin-left: 3rem;
+  width: 376px;
+}
+
+.success-message span{
+  color: var(--Charcoal-Grey);
+  font-weight: 700;
+}
+
 #success img {
   max-width: 50px;
   height: auto;
   margin-top: 10%;
-  margin-left: 20%;
+  margin-left: 10%;
+  margin-bottom: 0.5rem;
 }
 
 .success-text {
   color: hsl(235, 18%, 26%);
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
-  margin-left: 10px;
+  margin-left: -2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
-}
-
-p {
-  font-size: 16px;
-  margin-left: 10px;
-  text-align: center;
-  color: hsl(235, 18%, 26%);
+  width: 376px;
 }
 
 .dismiss-button {
   width: 80%;
-  background: var(--Dark-Slate-Grey);
+  background: var(--Charcoal-Grey);
+  color: var(--White);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: all .3s ease-in-out;
-  color: #fff;
-  padding: 10px 20px;
+  padding: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 400;
-  text-align: center;
-  margin-top: 40px;
-  margin-left: 50px;
+  font-weight: 700;
+  position: relative;
+  left: 2.8rem;
+  top: 3rem;
 }
 
 .dismiss-button:hover {
@@ -219,7 +225,67 @@ p {
 
 @media(max-width: 768px){
   .container{
+    width: 375px;
+    height: 982px;
     display: flex;
     flex-direction: column-reverse;
+  }
+
+  .illustration{
+    width: 375px;
+  }
+
+  #success img{
+    max-width: 50px;
+    position: relative;
+    top: 7rem;
+  }
+
+  .signup-title{
+    font-size: 30px;
+  }
+
+  .signup-header{
+    font-size: 30px;
+  }
+
+  #success{
+    width: 375px;
+    height: 812px;
+  }
+
+  .success-message p{
+    position: relative;
+    top: 6rem;
+    right: 0.5rem;
+  }
+
+  .dismiss-button{
+    position: relative;
+    top: 9rem;
+  }
+  
+  .success-text{
+    position: relative;
+    top: 7rem;
+    left: 3rem;
+    font-size: 30px;
+  }
+
+  .email-input{
+    width: 327px;
+    position: relative;
+    left: -0.5rem;
+  }
+
+  .newsletter-label{
+    position: relative;
+    left: 0.1rem;
+  }
+
+  .submit-button{
+    width: 327px;
+    position: relative;
+    left: -0.5rem;
   }
 }

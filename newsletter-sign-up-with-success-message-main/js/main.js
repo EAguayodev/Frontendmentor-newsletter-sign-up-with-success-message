@@ -31,14 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
       signin.style.display = 'block';
     }
   };
-  document.getElementById('email').addEventListener('input', function () {
+ document.getElementById('email').addEventListener('input', function () {
             var emailInput = this.value;
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+            
             if (emailRegex.test(emailInput)) {
                 document.getElementById('error-message').style.display = 'none';
             } else {
                 document.getElementById('error-message').style.display = 'block';
+                document.getElementById('email').style.backgroundColor = 'hsl(0, 100%, 96%)';
+                document.getElementById('email').style.color = 'hsl(4, 100%, 67%)';
+                document.getElementById('email').style.border = '1px solid hsl(4, 100%, 67%)';
             }
         });
 });
