@@ -14,7 +14,7 @@
 
 ### Links
 
-- Solution URL: [Github](hhttps://github.com/EAguayodev?tab=repositories)
+- Solution URL: [Github](https://github.com/EAguayodev?tab=repositories)
 - Live Site URL: [Vercel](https://frontendmentor-newsletter-sign-up-with-success-message.vercel.app/)
 
 ## My process
