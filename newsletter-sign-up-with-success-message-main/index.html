@@ -1,111 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <link rel="stylesheet" href="css/main.css">
-  <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
-<!-- Sign-up form start -->
-  <div class="desktop">
-    <section class="all">
-      <div class="card"></div>
-      <div class="content-details-wrapper">
-        <div class="content-details">
-          <h1 class="title">Stay updated!</h1>
-          <div class="description-block">
-            <div class="description">
-              Join 60,000+ product managers receiving monthly updates on:
-            </div>
-            <div class="additional-details">
-              <div class="bullets">
-                <div class="feature-checks-parent">
-                  <div class="feature-checks">
-                   <img src="assets/images/icon-list.svg" alt="icon list">
-                  </div>
-                  <div class="donec-nec-justo">
-                    Product discovery and building what matters
-                  </div>
-                </div>
-                <div class="frame-parent">
-                  <div class="check-wrapper">
-                    <img src="assets/images/icon-list.svg" alt="icon list">
-                  </div>
-                  <div class="aliquam-tincidunt-ma">
-                    Measuring to ensure updates are a success
-                  </div>
-                </div>
-                <div class="frame-group">
-                  <div class="check-container">
-                    <img src="assets/images/icon-list.svg" alt="icon list">
-                  </div>
-                  <div class="vivamus-vestibulum-n">And much more!</div>
-                </div>
-              </div>
-            </div>
-            <form class="contact-block" id="signup-form">
-              <label for="email" class="vivamus-vestibulum-n1">Email address</label>
-              <p class="vivamus-vestibulum-n2" id="error-message">Valid email required</p>
-              <div class="rectangle-parent" id="error-display">
-                <input
-                  id="error"
-                  class="your-email-address"
-                  placeholder="email@company.com"
-                  type="text"
-                />
-              </div>
-            </form>
-            <button class="rectangle-group">
-              <b class="get-started">Subscribe to monthly newsletter</b>
-            </button>
-          </div>
-        </div>
-      </div>
+  <!-- Sign-up form start -->
+  <div class="container" id="signup">
+    <div class="content">
+      <h1 class="signup-header">Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul class="update-list">
+        <li>
+          <img class="icon"
+            src="assets/images/icon-list.svg"
+            alt="Icon">
+
+          Product discovery and building what matters
+        </li>
+        <li> <img class="icon"
+            src="assets/images/icon-list.svg"
+            alt="Icon">
+          Measuring to ensure updates are a success</li>
+        <li> <img class="icon"
+            src="assets/images/icon-list.svg"
+            alt="Icon">
+          And much more!</li>
+      </ul>
+      <form id="signup-form">
+        <label for="email" class="newsletter-label">Email address</label>
+        <p id="error-message" class="error-message">Valid email required</p>
+        <input type="email" id="email" class="email-input" placeholder="email@company.com">
+        <button type="submit" class="submit-button">Subscribe to monthly newsletter</button>
+      </form>
+    </div>
+    <div class="image">
       <picture>
-        <source media="(min-width: 640px)" alt="Desktop img" srcset="assets/images/illustration-sign-up-desktop.svg" >
-        <source media="(min-width: 400px)" alt="Mobile img" srcset="assets/images/illustration-sign-up-mobile.svg"> 
-        <img class="illustration" src="assets/images/illustration-sign-up-desktop.svg" alt="illustration">
+        <source media="(min-width: 1200px;)" alt="Desktop" srcset="assets/images/illustration-sign-up-desktop.svg">
+        <source media="(min-width: 400px;)" alt="Mobile" srcset="assets/images/illustration-sign-up-mobile.svg">
+        <img class="illustration" src="assets/images/illustration-sign-up-desktop.svg">
       </picture>
-    </section>
+    </div>
   </div>
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
 
-  <div class="desktop-success">
-    <div class="card-parent">
-      <img
-        class="check-icon"
-        loading="lazy"
-        alt="check icon"
-        src="assets/images/icon-success.svg"
-      />
+  <div class="success-message" id="success">
+    <!-- Success message start -->
+    <img src="assets/images/icon-success.svg">
+    <p class="success-text">Thanks for subscribing!</p>
+    <p>A confirmation email has been sent to <span>ash@loremcompany.com.</span> Please open it and click the button inside to confirm your subscription.</p>
+    <p></p>
+    <button class="dismiss-button" onclick="dismissSuccessMessage()">Dismiss message</button>
+    <!-- Success message end -->
+</div>
 
-      <div class="success-title-parent" >
-        <h1 class="title">Thanks for subscribing!</h1>
-        <div class="description">
-          <p>A confirmation email has been sent to <span>ash@loremcompany.com</span> Please open it and click the button inside to confirm your
-            subscription. </p>
-        </div>
-      </div>
-      <button class="rectangle-group">
-        Dismiss message
-      </button>
-    </div>
-  </div>
-<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Eric Aguayo</a>.
   </div>
 </body>
+
 </html>
